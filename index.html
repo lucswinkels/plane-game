@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dev challenge 2 - Flying simulator</title>
+    <!-- SEO -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+    <!-- Main CSS File-->
+    <link rel="stylesheet" href="src/css/main.css" />
+    <!-- Main JS File -->
+    <script src="src/js/main.js"></script>
+</head>
+
+<body>
+    <!-- Instructions -->
+    <div class="instructions" id="instructions">
+        <img src="src/img/assets/wasd.png">
+        <br>
+        <p>Use WASD to fly — avoid other planes to gain points!</p>
+    </div>
+
+    <!-- Collision -->
+    <div id="collision">
+        <p>Collision! -50 points!</p>
+    </div>
+
+    <!-- Hidden image sources -->
+    <img id="plane" style="display:none" src="src/img/assets/planes/plane.png" />
+    <img id="helicopter" style="display:none" src="src/img/assets/planes/helicopter.png" />
+    <img id="blimp" style="display:none" src="src/img/assets/planes/blimp.png" />
+    <img id="jet" style="display:none" src="src/img/assets/planes/jet.png" />
+
+    <!-- Main Canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Cloud background -->
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+    <div class="cloud cloud-6"></div>
+    <div class="cloud cloud-7"></div>
+    <div class="cloud cloud-8"></div>
+    <div class="cloud cloud-9"></div>
+    <div class="cloud cloud-10"></div>
+
+    <!-- Obstacles -->
+    <div id="obstacle">
+        <div class="obstacle obstacle-1 obstacle-plane">
+            <img src="src/img/assets/planes/plane-enemy.png" />
+        </div>
+        <div class="obstacle obstacle-2 obstacle-heli">
+            <img src="src/img/assets/planes/helicopter-enemy.png" />
+        </div>
+        <div class="obstacle obstacle-3 obstacle-plane">
+            <img src="src/img/assets/planes/plane-enemy.png" />
+        </div>
+        <div class="obstacle obstacle-4 obstacle-heli">
+            <img src="src/img/assets/planes/helicopter-enemy.png" />
+        </div>
+        <div class="obstacle obstacle-5 obstacle-heli">
+            <img src="src/img/assets/planes/plane-enemy.png" />
+        </div>
+        <div class="obstacle obstacle-6 obstacle-heli">
+            <img src="src/img/assets/planes/helicopter-enemy.png" />
+        </div>
+        <div class="obstacle obstacle-7 obstacle-jet">
+            <img src="src/img/assets/planes/jet-enemy.png" />
+        </div>
+        <div class="obstacle obstacle-8 obstacle-blimp">
+            <img src="src/img/assets/planes/blimp-enemy.png" />
+        </div>
+    </div>
+
+    <!-- Points -->
+    <div class="points">Points: <span id="points">0</span></div>
+
+    <!-- Sidepanel -->
+    <div class="controls-container" id="controls-container">
+        <div class="info">
+            <h1>Flying simulator</h1>
+            <p>Use WASD to fly — avoid other planes to gain points!</p>
+        </div>
+        <div class="settings">
+            <h2>Settings</h2>
+            <h4>Music volume</h4>
+            <input type="range" id="volume-control">
+            <h4>Plane type</h4>
+            <label>
+                <input type="radio" name="plane-type" value="plane" checked>
+                <img src="src/img/assets/planes/plane.png" class="plane-type">
+            </label>
+            <label>
+                <input type="radio" name="plane-type" value="helicopter">
+                <img src="src/img/assets/planes/helicopter.png" class="plane-type">
+            </label>
+            <label>
+                <input type="radio" name="plane-type" value="blimp">
+                <img src="src/img/assets/planes/blimp.png" class="plane-type">
+            </label>
+            <label>
+                <input type="radio" name="plane-type" value="jet">
+                <img src="src/img/assets/planes/jet.png" class="plane-type">
+            </label>
+            <h4>Plane speed rating</h4>
+            <img src="src/img/assets/speed/speed-5.png" id="speed-indicator">
+        </div>
+    </div>
+    <button onclick="hideSidePanel()" id="close-panel">⟵ Hide controls</button>
+    <button onclick="openSidePanel()" class="hidden" id="open-panel">⟶ Open controls</button>
+</body>
+
+</html>
